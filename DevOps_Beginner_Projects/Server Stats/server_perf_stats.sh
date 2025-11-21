@@ -41,6 +41,37 @@ ps -eo pid,comm,%cpu,%mem --sort=-%cpu | head -n 6
 echo "-------------------------------------"
 echo
 
+echo "--- Top 5 Memory Consuming Processes ---"
+ps -eo pid,comm,%mem --sort=-%mem | head -n 6
+echo "----------------------------------------"
+echo 
+
+# OS version
+echo "--- OS Version ---"
+if [ -f /etc/os-release ]; then
+    grep -E '^(NAME|VERSION)=' /etc/os-release
+else
+    uname -a
+fi
+echo
+
+# Logged in users
+echo "--- Logged in Users ---"
+who
+echo "-----------------------"
+echo
+
+# Failed login attempts
+echo "--- Failed Login Attempts ---"
+# lastb shows failed login attempts (with root privileges)
+if command -v lastb &> /dev/null; then
+    lastb | head -n 10
+else
+    echo "Command 'lastb' not available. Check /var/log/auth.log or journalctl for failed logins."
+fi
+echo "-----------------------------"
+echo 
+
 echo "--- System Uptime ---"
 uptime -p
 echo "---------------------"
