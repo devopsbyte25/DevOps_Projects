@@ -11,7 +11,7 @@
 ## Cloud
 
 - AWS: EC2, VPC, IAM, S3, EKS, CloudWatch
-- Azure
+- Azure: VM, Vnet, LB, VMSS, KMS, Key Vault, Storage Account
 - Openstack
 
 ## Containers
@@ -38,7 +38,7 @@
 
 ## Version Control
 
-- Git, GitHub
+- Git
 
 ## IDE/Editors
 
