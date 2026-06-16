@@ -27,3 +27,4 @@ jobs:
         run: chmod +x scripts/*.sh tests/*.sh
       - name: Run test suite
         run: bash tests/test_backup.sh
+
