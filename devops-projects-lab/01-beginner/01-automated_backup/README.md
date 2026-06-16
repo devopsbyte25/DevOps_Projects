@@ -131,7 +131,7 @@ GitHub Actions runs on every push and pull request:
 1. **Lint** — `shellcheck` on all `.sh` files
 2. **Test** — full integration test suite (8 tests)
 
-[![CI](https://github.com/devopsbyte25/devops-projects-lab/01-beginner/01-automated_backup/actions/workflows/ci.yml/badge.svg)](https://github.com/devopsbyte25/devops-projects-lab/01-beginner/01-automated_backup/actions/workflows/ci.yml)
+[![CI](https://github.com/devopsbyte25/devops-projects-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/devopsbyte25/devops-projects-lab/actions/workflows/ci.yml)
 
 ---
 
