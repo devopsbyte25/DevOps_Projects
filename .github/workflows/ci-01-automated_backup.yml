@@ -9,6 +9,7 @@ on:
     branches: [main]
     paths:
       - '01-automated_backup/**'
+      - '.github/workflows/ci-01-automated_backup.yml'
 
 jobs:
   lint:
