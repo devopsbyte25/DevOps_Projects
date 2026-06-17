@@ -15,7 +15,7 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get install -y shellcheck
       - name: Lint all scripts
-        run: shellcheck scripts/backup.sh scripts/install_cron.sh tests/test_backup.sh
+        run: shellcheck 01-automated_backup/scripts/backup.sh 01-automated_backup/scripts/install_cron.sh 01-automated_backup/tests/test_backup.sh
 
   test:
     name: Integration tests
@@ -24,7 +24,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Make scripts executable
-        run: chmod +x scripts/*.sh tests/*.sh
+        run: chmod +x 01-automated_backup/scripts/*.sh 01-automated_backup/tests/*.sh
       - name: Run test suite
-        run: bash tests/test_backup.sh
-
+        run: bash 01-automated_backup/tests/test_backup.sh
