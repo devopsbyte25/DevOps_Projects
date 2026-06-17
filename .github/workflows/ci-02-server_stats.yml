@@ -1,0 +1,22 @@
+name: CI - 02 Server Stats
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '02-server_stats/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '02-server_stats/**'
+
+jobs:
+  lint:
+    name: Shell lint (shellcheck)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install shellcheck
+        run: sudo apt-get install -y shellcheck
+      - name: Lint scripts
+        run: shellcheck 02-server_stats/scripts/*.sh

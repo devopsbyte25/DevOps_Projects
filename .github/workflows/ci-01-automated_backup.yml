@@ -1,10 +1,14 @@
-name: CI
+name: CI - 01 Automated Backup
 
 on:
   push:
     branches: [main]
+    paths:
+      - '01-automated_backup/**'   # only triggers on changes to this folder
   pull_request:
     branches: [main]
+    paths:
+      - '01-automated_backup/**'
 
 jobs:
   lint:
@@ -15,7 +19,10 @@ jobs:
       - name: Install shellcheck
         run: sudo apt-get install -y shellcheck
       - name: Lint all scripts
-        run: shellcheck 01-automated_backup/scripts/backup.sh 01-automated_backup/scripts/install_cron.sh 01-automated_backup/tests/test_backup.sh
+        run: |
+          shellcheck 01-automated_backup/scripts/backup.sh \
+                     01-automated_backup/scripts/install_cron.sh \
+                     01-automated_backup/tests/test_backup.sh
 
   test:
     name: Integration tests
